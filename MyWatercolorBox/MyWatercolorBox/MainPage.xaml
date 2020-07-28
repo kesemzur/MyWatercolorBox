@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"             
+             xmlns:views="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             xmlns:dualScreen="clr-namespace:Xamarin.Forms.DualScreen;assembly=Xamarin.Forms.DualScreen"
+             xmlns:controls="clr-namespace:MyWatercolorBox"
+             xmlns:ViewModels="clr-namespace:MyWatercolorBox.ViewModels"
+             x:Class="MyWatercolorBox.MainPage"
+             mc:Ignorable="d">
+    
+    <Grid>
+        <dualScreen:TwoPaneView x:Name="twoPaneView" MinWideModeWidth="0" MinTallModeHeight="0">
+            <dualScreen:TwoPaneView.Pane1>
+                <controls:WatercolorControl />
+            </dualScreen:TwoPaneView.Pane1>
+
+            <dualScreen:TwoPaneView.Pane2>
+                <controls:CanvasControl  />
+
+                <!--<views:SKCanvasView PaintSurface="OnPainting"
+                            EnableTouchEvents="True" Touch="OnTouch" />-->
+            </dualScreen:TwoPaneView.Pane2>
+
+        </dualScreen:TwoPaneView>
+
+        <Grid x:Name="singlePaneView">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <controls:CanvasControl Grid.Row="0" />
+            <!--<views:SKCanvasView Grid.Row="0" PaintSurface="OnPainting"
+                            EnableTouchEvents="True" Touch="OnTouch" />-->
+
+            <controls:WatercolorControl Grid.Row="1" />
+        </Grid>
+    </Grid>
+</ContentPage>

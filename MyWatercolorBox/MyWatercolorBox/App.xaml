@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MyWatercolorBox.App">
+    <Application.Resources>
+
+        <Color x:Key="BoxBackground">#D6D7D7</Color>
+        
+        
+        <Style x:Key="RoundButtonStyle" TargetType="Button">
+            <Setter Property="WidthRequest" Value="130" />
+            <Setter Property="HeightRequest" Value="130" />
+            <Setter Property="BorderWidth" Value="10" />
+            <Setter Property="BorderColor" Value="DimGray" />
+            <Setter Property="CornerRadius" Value="65" />
+            <Setter Property="Visual" Value="Material" />
+        </Style>
+    </Application.Resources>
+</Application>

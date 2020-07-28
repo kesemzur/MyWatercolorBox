@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MyWatercolorBox.WatercolorControl">
+  <ContentView.Content>
+        <Grid BackgroundColor="{StaticResource BoxBackground}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Column="0" Orientation="Horizontal" Margin="-20,10,-30,20" VerticalOptions="Center" HorizontalOptions="Center">
+                <ImageButton x:Name="PencilButton" Source="pencil.png"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"
+                        Clicked="OnPencilSelected">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="Scale"
+                                                Value="1" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="Scale"
+                                                Value="0.8" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </ImageButton>
+                <ImageButton x:Name="WideBrushButton" Source="widebrush.png"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"                                 
+                        Clicked="OnWideBrushSelected" >
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="Scale"
+                                                Value="1" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="Scale"
+                                                Value="0.8" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </ImageButton>
+                <ImageButton x:Name="NarrowBrushButton" Source="narrowbrush.png"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand" 
+                                 Clicked="OnNarrowBrushSelected" >
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="Scale"
+                                                Value="1" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="Scale"
+                                                Value="0.8" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </ImageButton>
+            </StackLayout>
+
+            <Grid Grid.Column="1" Margin="10,20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Row="0" Grid.Column="0" Style="{StaticResource RoundButtonStyle}" BackgroundColor="MediumPurple" Clicked="OnPurpleColorSelected" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Button Grid.Row="0" Grid.Column="1" Style="{StaticResource RoundButtonStyle}" BackgroundColor="SteelBlue" Clicked="OnBlueColorSelected" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Button Grid.Row="1" Grid.Column="0" Style="{StaticResource RoundButtonStyle}" BackgroundColor="SaddleBrown" Clicked="OnBrownColorSelected" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Button Grid.Row="1" Grid.Column="1" Style="{StaticResource RoundButtonStyle}" BackgroundColor="Red" Clicked="OnRedColorSelected" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Button Grid.Row="2" Grid.Column="0" Style="{StaticResource RoundButtonStyle}" BackgroundColor="Black" Clicked="OnBlackColorSelected" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Button Grid.Row="2" Grid.Column="1" Style="{StaticResource RoundButtonStyle}" BackgroundColor="Gold" Clicked="OnYellowColorSelected" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Button Grid.Row="3" Grid.Column="0" Style="{StaticResource RoundButtonStyle}" BackgroundColor="White" Clicked="OnWhiteColorSelected" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Button Grid.Row="3" Grid.Column="1" Style="{StaticResource RoundButtonStyle}" BackgroundColor="MediumSeaGreen" Clicked="OnGreenColorSelected" HorizontalOptions="Center" VerticalOptions="Center"/>
+            </Grid>
+        </Grid>
+    </ContentView.Content>
+</ContentView>
